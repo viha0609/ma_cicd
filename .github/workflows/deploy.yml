@@ -52,10 +52,10 @@ jobs:
 
       - name: Deploy to Kubernetes
         run: |
-          kubectl apply -f mysql-deployment.yaml  --validate=false
-          kubectl apply -f mysql-pv-new.yaml
-          kubectl apply -f mysql-pvc-new.yaml
-          kubectl apply -f spring-app-deployment.yaml
-
+           kubectl apply -f k8s/mysql-deployment.yaml --validate=false
+           kubectl apply -f k8s/mysql-pv-new.yaml
+           kubectl apply -f k8s/mysql-pvc-new.yaml
+           kubectl apply -f k8s/spring-app-deployment.yaml
+           
       - name: Restart Deployment
         run: kubectl rollout restart deployment/spring-app
