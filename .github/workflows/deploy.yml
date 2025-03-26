@@ -33,7 +33,7 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build -t viha06/connecting-mysql-spring-app:latest ./connecting-mysql
+          docker build -t viha06/connecting-mysql-spring-app:latest .
           docker push viha06/connecting-mysql-spring-app:latest
 
       - name: Set up Kubernetes
