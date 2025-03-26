@@ -52,7 +52,7 @@ jobs:
 
       - name: Deploy to Kubernetes
         run: |
-          kubectl apply -f mysql-deployment.yaml
+          kubectl apply -f mysql-deployment.yaml  --validate=false
           kubectl apply -f mysql-pv-new.yaml
           kubectl apply -f mysql-pvc-new.yaml
           kubectl apply -f spring-app-deployment.yaml
