@@ -19,6 +19,12 @@ jobs:
           java-version: '23'
           distribution: 'temurin'
 
+      - name: Debug Directory
+        run: |
+          pwd
+          ls -lah
+
+
       - name: Build the JAR file
         working-directory: connecting-mysql
         run: mvn clean package -DskipTests
