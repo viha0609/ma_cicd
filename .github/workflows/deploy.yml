@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
-        with:
+        with: 
           fetch-depth: 0  # Ensure the full repository is fetched
           submodules: true  # Fetch submodules if any
 
