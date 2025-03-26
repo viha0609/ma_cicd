@@ -27,8 +27,8 @@ jobs:
           java-version: '23'
           distribution: 'temurin'
 
-      - name: Build the JAR file
-        run: mvn -f connecting-mysql/pom.xml clean package -DskipTests  # ✅ Fix path issue
+      - name: Build the JAR file with Maven Wrapper
+      - run: ./mvnw clean package -DskipTests
 
       - name: Login to Docker Hub
         run: echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
