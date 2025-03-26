@@ -24,9 +24,8 @@ jobs:
           pwd
           ls -lah
 
-
       - name: Build the JAR file
-        working-directory: connecting-mysql
+        working-directory: ./connecting-mysql  # ✅ Fix for correct project path
         run: mvn clean package -DskipTests
 
       - name: Login to Docker Hub
@@ -34,7 +33,7 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build -t viha06/connecting-mysql-spring-app:latest .
+          docker build -t viha06/connecting-mysql-spring-app:latest ./connecting-mysql
           docker push viha06/connecting-mysql-spring-app:latest
 
       - name: Set up Kubernetes
