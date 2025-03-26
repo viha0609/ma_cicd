@@ -20,6 +20,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Build the JAR file
+        working-directory: connecting-mysql
         run: mvn clean package -DskipTests
 
       - name: Login to Docker Hub
